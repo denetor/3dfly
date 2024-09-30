@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "run": "npx vite"
+    "run": "npx vite src"
   },
   "dependencies": {
     "three": "^0.169.0"
