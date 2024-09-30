@@ -2,6 +2,7 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color( 0x9090dd );
+scene.fog = new THREE.Fog(0xcccccc, -200, 250);
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 camera.position.y = 10;
@@ -29,7 +30,7 @@ scene.add(light.target);
 
 // floor
 const floorGeometry = new THREE.PlaneGeometry( 100, 1000, 1 );
-const floorMaterial = new THREE.MeshBasicMaterial( { color: 0x007700, side: THREE.DoubleSide } );
+const floorMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, side: THREE.DoubleSide } );
 const floor = new THREE.Mesh( floorGeometry, floorMaterial );
 floor.rotateX(- Math.PI * 0.5);
 floor.receiveShadow = true;
@@ -44,7 +45,7 @@ const buildingMaterial = new THREE.MeshPhongMaterial({
     side: THREE.DoubleSide,
 });
 for (let i = 0; i < 100; i++) {
-    const geometry = new THREE.BoxGeometry( 5, 10 + Math.random() * 30, 5 );
+    const geometry = new THREE.BoxGeometry( 5, 10 + Math.random() * 50, 5 );
     const building = new THREE.Mesh( geometry, buildingMaterial );
     building.receiveShadow = true;
     building.castShadow = true;
