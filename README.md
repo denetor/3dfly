@@ -5,7 +5,7 @@ nel mondo 3d
 ## Startup
 Avviare il sistema con:
 ```bash
-npx vite
+npm run dev
 ```
 
 Vedere il progetto navigando in: `http://localhost:5173`. 
