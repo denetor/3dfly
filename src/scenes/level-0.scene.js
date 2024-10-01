@@ -32,7 +32,7 @@ function get() {
     scene.add(terrain);
 
     // buildings
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 50; i++) {
         const x = Math.random() * (Terrain.WIDTH - Building.WIDTH) - Terrain.WIDTH / 2 + (Building.WIDTH / 2);
         const z = -1 * (Math.random() * (Terrain.LENGTH - Building.DEPTH) + (Building.DEPTH / 2));
         const building = Building.get();
@@ -41,9 +41,6 @@ function get() {
         building.position.y = building.geometry.parameters.height / 2;
         scene.add(building);
     }
-    // const building = Building.get();
-    // building.position.y = building.geometry.parameters.height / 2;
-    // scene.add(building);
 
     return scene;
 }
