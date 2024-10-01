@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
-const WIDTH = 30;
-const DEPTH = 30;
+const WIDTH = 20;
+const DEPTH = 20;
 const MINHEIGHT = 20;
 const MAXHEIGHT = 100;
 

@@ -5,13 +5,13 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 camera.position.x = 25;
 camera.position.y = 50;
 camera.position.z = 50;
-camera.lookAt(0,0,0);
+camera.lookAt(0,0,-100);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.antialias = true;
 renderer.shadowMap.enabled = true;
-// renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setSize(320,240);
+renderer.setSize(window.innerWidth, window.innerHeight);
+// renderer.setSize(320,240);
 document.body.appendChild(renderer.domElement);
 
 const scene = Level0.get();
