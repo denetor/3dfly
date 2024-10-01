@@ -1,10 +1,15 @@
 import * as THREE from "three";
 import * as Terrain from "../actors/terrain.actor";
 import * as Building from "../actors/building.actor";
+import * as Axis from "../actors/axis.actor";
 
 function get() {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color( 0x9090dd );
+
+    // axis
+    const axis = Axis.get();
+    scene.add(axis);
 
     // ambient light
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
