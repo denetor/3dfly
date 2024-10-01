@@ -9,3 +9,9 @@ npm run dev
 ```
 
 Vedere il progetto navigando in: `http://localhost:5173`. 
+
+
+## TODO
+### Movimento camera
+https://threejs.org/docs/#examples/en/controls/PointerLockControls
+https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_pointerlock.html
