@@ -9,9 +9,10 @@ camera.position.y = 10;
 camera.position.z = 0;
 
 const renderer = new THREE.WebGLRenderer();
+renderer.antialias = true;
 renderer.shadowMap.enabled = true;
-renderer.setSize(window.innerWidth, window.innerHeight);
-//renderer.setSize(320,240);
+// renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(320,240);
 document.body.appendChild(renderer.domElement);
 
 // add some ambient light to avoid too dark zones
@@ -30,9 +31,9 @@ scene.add(light.target);
 
 // floor
 const floorGeometry = new THREE.PlaneGeometry( 100, 1000, 1 );
-const floorMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, side: THREE.DoubleSide } );
+const floorMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, side: THREE.DoubleSide } );
 const floor = new THREE.Mesh( floorGeometry, floorMaterial );
-floor.rotateX(- Math.PI * 0.5);
+floor.rotateX(+ Math.PI * 0.5);
 floor.receiveShadow = true;
 floor.position.z = -500;
 scene.add(floor);
@@ -52,6 +53,8 @@ for (let i = 0; i < 100; i++) {
     building.position.x = Math.random() * 100 - 50;
     building.position.y = 0;
     building.position.z = -1 * Math.random() * 1000 + 50;
+    const buildingEdges = new THREE.WireframeGeometry(geometry);
+    building.add(buildingEdges);
     scene.add(building);
 }
 
